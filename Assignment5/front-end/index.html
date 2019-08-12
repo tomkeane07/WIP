@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment5</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+	<form id = "create">
+		<h1>Create</h1>
+		<input placeholder='name' id='Cname' name='Cname' type="text" onclick="this.value=''"><br>
+		<input placeholder='url' id='Curl' name='Curl' type="text" onclick="this.value=''"><br>
+		<input placeholder='description' id='Cdesc' name='Cdesc' type="text" onclick="this.value=''"><br>
+		<input type='submit' id='C' value='Create'>
+		<div id='Cprint' type='json'></div>
+	</form>
+
+	<form id = "retrieve">
+		<h1>Retrieve</h1>
+		(tick boxes to select specific columns, none/all ticked -> *)<br>
+		SELECT<br> 
+		name: <input type="checkbox" name="check1" value="name">|
+		 id: <input type="checkbox" name="check2" value="id">|
+		 url: <input type="checkbox" name="check3" value="URL">|
+		 create date: <input type="checkbox" name="check4" value="theDate">|
+		 description: <input type="checkbox" name="check5" value="theDesc"><br><br>
+		  WHERE 
+		<select name='whereParam' id='whereParam'>
+			<option value = 'id'>ID</option>
+			<option value = 'name'>Name</option>
+			<option value = 'URL'>URL</option>
+			<option value = 'theDate'>Date</option>
+		</select>
+		=
+		<input placeholder='seach by Parameter' id = 'RParam' name='RParam' type="text" onclick="this.value=''" value=''>
+
+		<input type='submit' id='R' value='Retrieve'>
+		<div id='Rprint' type='json'></div>
+	</form>
+
+	<form id = "update">
+		<h1>Update</h1>
+		SET <select name='setParam' id='setParam'>
+			<option value = 'name'>Name</option>
+			<option value = 'URL'>URL</option>
+			<option value = 'theDate'>Date</option>
+			<option value = 'theDesc'>Description</option>
+			</select>
+
+		= 	<input placeholder='Set Parameter' name='newParam' type="text" onclick="this.value=''"><br>
+
+		WHERE <select name='whereParam' id='whereParam'>
+			<option value = 'id'>ID</option>
+			<option value = 'name'>Name</option>
+			<option value = 'URL'>URL</option>
+			<option value = 'theDate'>Date</option>
+			<option value = 'theDesc'>Description</option>
+			</select>
+
+		=	<input placeholder='Parameter' name='oldParam' type="text" onclick="this.value=''"><br>
+		<input type='submit' id='U' value ='Update'>
+		<div id='Uprint' type='json'></div>
+	</form>
+
+	<form id = "delete">
+		<h1>Delete</h1>
+		<input placeholder='seach by ID' id='Did' name='Did' type="text" onclick="this.value=''">
+		<input type='submit' id='D' value='Delete'>
+		<div id='Dprint' type='json'></div>
+	</form>
+</body>
+</html>
